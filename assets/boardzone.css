@@ -120,24 +120,12 @@ html article.link {
 }
 
 /*
- * Upptime paints the response-time graph (a bright teal PNG) as the card's own background, under
- * the text. Move it to a faint layer on the end side so the card text stays readable.
+ * Upptime paints the response-time graph (a teal-on-white PNG) as the card's background; scaled to
+ * the card it reads as a stray wedge, so the cards drop it. Each check's history page keeps its
+ * real chart.
  */
 html section article.graph {
   background-image: none !important;
-  isolation: isolate;
-  overflow: hidden;
-}
-html section article.graph::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  z-index: -1;
-  background-image: var(--background);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center left;
-  opacity: 0.12;
 }
 html section article.graph h4 a {
   color: var(--bz-fg);
@@ -223,8 +211,5 @@ footer p:empty {
   }
   html nav .container ul a {
     padding: 1rem 0.5rem;
-  }
-  html section article.graph::before {
-    background-size: 45% auto;
   }
 }
