@@ -19,6 +19,8 @@ on:
   push:
     paths:
       - "assets/**"
+      # Setup CI, which rebuilt the site on config changes, is disabled (it would undo the SHA pins).
+      - ".upptimerc.yml"
   schedule:
     - cron: "0 1 * * *"
   repository_dispatch:
