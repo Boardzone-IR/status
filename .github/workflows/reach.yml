@@ -1,0 +1,12 @@
+name: Reach check
+on:
+  workflow_dispatch:
+permissions: {}
+jobs:
+  reach:
+    runs-on: ubuntu-latest
+    steps:
+      - run: |
+          for u in https://boardzone.ir/ https://boardzone.ir/api/v1/healthz; do
+            echo "$u -> $(curl -sS -o /dev/null -w '%{http_code} %{time_total}s' --max-time 20 "$u")"
+          done
