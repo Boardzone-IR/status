@@ -41,7 +41,9 @@ skipHomepageUpdate: true
 i18n:
   # Jalali calendar, Latin digits (uptime and response-time figures come from Upptime in Latin digits).
   locale: fa-IR-u-nu-latn
-  footer: ساخته‌شده با [Upptime](https://upptime.js.org)
+  # Same line as the site's footer (copyright in messages/fa.json); the Jalali year is static, so
+  # it needs bumping at Nowruz.
+  footer: © ۱۴۰۵ بردزون — تمامی حقوق محفوظ است.
   activeIncidents: رخدادهای فعال
   allSystemsOperational: همه‌ی سرویس‌ها کار می‌کنند
   incidentReport: "گزارش رخداد #$NUMBER ←"
