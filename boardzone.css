@@ -119,9 +119,40 @@ html article.link {
   cursor: pointer;
 }
 
-/* The response-time graph sits on the end side, away from the text. */
+/*
+ * Upptime paints the response-time graph (a bright teal PNG) as the card's own background, under
+ * the text. Move it to a faint layer on the end side so the card text stays readable.
+ */
 html section article.graph {
+  background-image: none !important;
+  isolation: isolate;
+  overflow: hidden;
+}
+html section article.graph::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  background-image: var(--background);
+  background-size: contain;
+  background-repeat: no-repeat;
   background-position: center left;
+  opacity: 0.12;
+}
+html section article.graph h4 a {
+  color: var(--bz-fg);
+}
+html section article.graph > div {
+  color: var(--bz-fg-soft);
+}
+html section article.graph .data {
+  color: var(--bz-fg);
+  font-weight: 700;
+}
+
+/* Gap between the "live status" heading row and the cards under it. */
+html main > div.f + section.live-status {
+  margin-top: 1rem;
 }
 html section article .icon {
   margin: 0 0 0 0.4rem;
@@ -151,9 +182,20 @@ html form.r input:checked + label {
   border-radius: 999px;
 }
 
-/* Incident detail puts its GitHub link on the end edge; in RTL that edge is the left. */
+/*
+ * The page names no GitHub repo: the incident page's "view on GitHub" block is hidden, and links
+ * Upptime builds to GitHub (comment dates, comment authors) render as plain text.
+ */
 html main div.r:not(.f) {
-  text-align: left;
+  display: none;
+}
+html main a[href*="docs.github.com"] {
+  display: none;
+}
+html main a[href^="https://github.com/"] {
+  pointer-events: none;
+  color: inherit;
+  text-decoration: none;
 }
 
 a:focus-visible,
@@ -182,7 +224,7 @@ footer p:empty {
   html nav .container ul a {
     padding: 1rem 0.5rem;
   }
-  html section article.graph {
+  html section article.graph::before {
     background-size: 45% auto;
   }
 }
