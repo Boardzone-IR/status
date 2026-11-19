@@ -28,8 +28,6 @@ status-website:
   navbar:
     - title: بردزون
       href: https://boardzone.ir/
-    - title: گیت‌هاب
-      href: https://github.com/$OWNER/$REPO
   links:
     - rel: preconnect
       href: https://fonts.googleapis.com
@@ -54,8 +52,7 @@ i18n:
   incidentOngoing: در جریان
   incidentOpenedAt: زمان شروع
   incidentClosedAt: زمان رفع
-  incidentViewOnGitHub: دیدن و دنبال کردن در گیت‌هاب
-  incidentCommentSummary: $DATE، نوشته‌ی $AUTHOR
+  incidentCommentSummary: $DATE
   incidentBack: → بازگشت به همه‌ی رخدادها
   pastIncidents: رخدادهای گذشته
   pastIncidentsResolved: در $MINUTES دقیقه با $POSTS پیام برطرف شد
@@ -71,17 +68,16 @@ i18n:
   degraded: کند
   ms: میلی‌ثانیه
   loading: در حال بارگذاری
-  navGitHub: گیت‌هاب
   rateLimitExceededTitle: سقف درخواست‌ها پر شد
-  rateLimitExceededIntro: از سقف درخواست‌های یک ساعت گذشته‌اید و باید کمی صبر کنید. می‌توانید یک توکن دسترسی شخصی گیت‌هاب هم اضافه کنید تا ادامه دهید.
+  rateLimitExceededIntro: از سقف درخواست‌های یک ساعت گذشته‌اید و باید کمی صبر کنید.
   rateLimitExceededWhatDoesErrorMean: این خطا یعنی چه؟
-  rateLimitExceededErrorMeaning: این صفحه وضعیت را از API گیت‌هاب می‌خواند. گیت‌هاب به هر IP ساعتی 60 درخواست می‌دهد که مصرف شده است.
+  rateLimitExceededErrorMeaning: این صفحه وضعیت را از سرویس میزبانش می‌خواند که به هر IP ساعتی 60 درخواست می‌دهد، و این سقف مصرف شده است.
   rateLimitExceededErrorHowCanFix: چطور درستش کنم؟
-  rateLimitExceededErrorFix: یک ساعت صبر کنید تا سقف IP شما برگردد، یا توکن دسترسی شخصی گیت‌هاب خود را اضافه کنید که ساعتی 5000 درخواست دیگر می‌دهد.
+  rateLimitExceededErrorFix: یک ساعت صبر کنید تا سقف IP شما برگردد.
   rateLimitExceededGeneratePAT: ساختن توکن دسترسی شخصی
   rateLimitExceededHasSet: توکن دسترسی شخصی تنظیم شده است.
   rateLimitExceededRemoveToken: حذف توکن
-  rateLimitExceededGitHubPAT: توکن دسترسی شخصی گیت‌هاب
+  rateLimitExceededGitHubPAT: توکن دسترسی شخصی
   rateLimitExceededCopyPastePAT: توکن را اینجا بچسبانید
   rateLimitExceededSaveToken: ذخیره‌ی توکن
   errorTitle: خطایی رخ داد
