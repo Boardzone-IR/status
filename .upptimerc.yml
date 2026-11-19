@@ -10,8 +10,96 @@ sites:
     expectedStatusCodes: [200]
     maxResponseTime: 10000
 status-website:
-  name: Boardzone status
+  name: وضعیت بردزون
   cname: status.boardzone.ir
+  # Base theme for the variables boardzone.css doesn't set; the page is dark-only like the site.
+  theme: dark
+  # Files from assets/ are linked by absolute URL: the export crawls same-origin links and writes
+  # each as a directory, which the later copy of assets/ then lands inside instead of replacing.
+  logoUrl: https://status.boardzone.ir/icon.svg
+  logoHref: https://boardzone.ir/
+  faviconSvg: https://status.boardzone.ir/icon.svg
+  favicon: https://status.boardzone.ir/icon-192.png
+  # The published status page never sets lang/dir or lets theme-color be changed from config.
+  customHeadHtml: >-
+    <script>document.documentElement.lang="fa";document.documentElement.dir="rtl";var m=document.querySelector('meta[name="theme-color"]');if(m)m.content="#0b0f14";</script>
+  introTitle: وضعیت سرویس‌های بردزون
+  introMessage: این صفحه هر پنج دقیقه در دسترس بودن سایت و سرور بازی را بررسی می‌کند.
+  navbar:
+    - title: بردزون
+      href: https://boardzone.ir/
+    - title: گیت‌هاب
+      href: https://github.com/$OWNER/$REPO
+  links:
+    - rel: preconnect
+      href: https://fonts.googleapis.com
+    - rel: stylesheet
+      href: https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;700&display=swap
+    - rel: stylesheet
+      href: https://status.boardzone.ir/boardzone.css
 skipDescriptionUpdate: true
 skipTopicsUpdate: true
 skipHomepageUpdate: true
+i18n:
+  # Jalali calendar, Latin digits (uptime and response-time figures come from Upptime in Latin digits).
+  locale: fa-IR-u-nu-latn
+  footer: ساخته‌شده با [Upptime](https://upptime.js.org)
+  activeIncidents: رخدادهای فعال
+  allSystemsOperational: همه‌ی سرویس‌ها کار می‌کنند
+  incidentReport: "گزارش رخداد #$NUMBER ←"
+  activeIncidentSummary: باز شده در $DATE با $POSTS پیام
+  incidentTitle: جزئیات رخداد $NUMBER
+  incidentDetails: جزئیات رخداد
+  incidentFixed: برطرف شد
+  incidentOngoing: در جریان
+  incidentOpenedAt: زمان شروع
+  incidentClosedAt: زمان رفع
+  incidentViewOnGitHub: دیدن و دنبال کردن در گیت‌هاب
+  incidentCommentSummary: $DATE، نوشته‌ی $AUTHOR
+  incidentBack: → بازگشت به همه‌ی رخدادها
+  pastIncidents: رخدادهای گذشته
+  pastIncidentsResolved: در $MINUTES دقیقه با $POSTS پیام برطرف شد
+  liveStatus: وضعیت زنده
+  overallUptime: "دسترس‌پذیری: $UPTIME"
+  overallUptimeTitle: دسترس‌پذیری
+  averageResponseTime: "میانگین پاسخ: $TIME میلی‌ثانیه"
+  averageResponseTimeTitle: میانگین پاسخ
+  sevelDayResponseTime: زمان پاسخ 7 روز اخیر
+  responseTimeMs: زمان پاسخ (میلی‌ثانیه)
+  up: برقرار
+  down: قطع
+  degraded: کند
+  ms: میلی‌ثانیه
+  loading: در حال بارگذاری
+  navGitHub: گیت‌هاب
+  rateLimitExceededTitle: سقف درخواست‌ها پر شد
+  rateLimitExceededIntro: از سقف درخواست‌های یک ساعت گذشته‌اید و باید کمی صبر کنید. می‌توانید یک توکن دسترسی شخصی گیت‌هاب هم اضافه کنید تا ادامه دهید.
+  rateLimitExceededWhatDoesErrorMean: این خطا یعنی چه؟
+  rateLimitExceededErrorMeaning: این صفحه وضعیت را از API گیت‌هاب می‌خواند. گیت‌هاب به هر IP ساعتی 60 درخواست می‌دهد که مصرف شده است.
+  rateLimitExceededErrorHowCanFix: چطور درستش کنم؟
+  rateLimitExceededErrorFix: یک ساعت صبر کنید تا سقف IP شما برگردد، یا توکن دسترسی شخصی گیت‌هاب خود را اضافه کنید که ساعتی 5000 درخواست دیگر می‌دهد.
+  rateLimitExceededGeneratePAT: ساختن توکن دسترسی شخصی
+  rateLimitExceededHasSet: توکن دسترسی شخصی تنظیم شده است.
+  rateLimitExceededRemoveToken: حذف توکن
+  rateLimitExceededGitHubPAT: توکن دسترسی شخصی گیت‌هاب
+  rateLimitExceededCopyPastePAT: توکن را اینجا بچسبانید
+  rateLimitExceededSaveToken: ذخیره‌ی توکن
+  errorTitle: خطایی رخ داد
+  errorIntro: گرفتن آخرین وضعیت ممکن نشد.
+  errorText: چند لحظه بعد دوباره امتحان کنید.
+  errorHome: رفتن به صفحه‌ی اصلی
+  pastScheduledMaintenance: نگهداری‌های برنامه‌ریزی‌شده‌ی گذشته
+  scheduledMaintenance: نگهداری برنامه‌ریزی‌شده
+  scheduledMaintenanceSummaryStarted: از $DATE به مدت $DURATION دقیقه
+  scheduledMaintenanceSummaryStarts: از $DATE به مدت $DURATION دقیقه
+  startedAt: شروع شد
+  startsAt: شروع
+  duration: مدت
+  durationMin: $DURATION دقیقه
+  incidentCompleted: انجام شد
+  incidentScheduled: برنامه‌ریزی‌شده
+  duration24H: 24 ساعت
+  duration7D: 7 روز
+  duration30D: 30 روز
+  duration1Y: 1 سال
+  durationAll: همه
