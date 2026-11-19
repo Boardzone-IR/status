@@ -11,7 +11,7 @@ sites:
     maxResponseTime: 10000
 status-website:
   name: Boardzone status
-  baseUrl: /status
+  cname: status.boardzone.ir
 skipDescriptionUpdate: true
 skipTopicsUpdate: true
 skipHomepageUpdate: true
